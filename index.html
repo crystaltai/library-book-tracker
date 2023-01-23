@@ -17,7 +17,23 @@
   <body>
     <div class="container">
       <div class="title">My book library</div>
-      <!-- <div class="form"></div> -->
+      <form>
+        <div>
+          <label for="title">Title</label><br />
+          <input type="text" id="title" name="title" /><br />
+        </div>
+        <div>
+          <label for="author">Author</label><br />
+          <input type="text" id="author" name="author" /><br />
+        </div>
+        <div>
+          <label for="status">Status</label><br />
+          <select id="status" name="status">
+            <option value="read">Read</option>
+            <option value="unread">Unread</option>
+          </select>
+        </div>
+      </form>
       <button onclick="addBookToLibrary()" class="submit-button">Submit</button>
       <div class="table-container">
         <table id="table">
@@ -25,6 +41,7 @@
             <th>Book</th>
             <th>Author</th>
             <th>Status</th>
+            <th></th>
           </tr>
           <tbody id="table-body">
             <tr>

@@ -2,12 +2,12 @@ let myLibrary = [
   {
     title: 'Deep Work',
     author: 'Cal Newport',
-    statu: true,
+    status: true,
   },
   {
     title: 'Deep Work 2',
     author: 'Cal Newport 2',
-    statu: true,
+    status: true,
   },
 ];
 
