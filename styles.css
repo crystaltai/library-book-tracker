@@ -20,11 +20,9 @@ body {
   flex-direction: column;
   min-width: 200px;
   max-width: 1000px;
-  background-color: red;
 }
 
 .title {
-  background-color: white;
   margin: 20px 5px;
   text-align: left;
   font-size: 35px;
