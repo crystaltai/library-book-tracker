@@ -18,13 +18,14 @@
     <div class="container">
       <div class="title">My book library</div>
       <!-- <div class="form"></div> -->
+      <button onclick="addBookToLibrary()" class="submit-button">Submit</button>
       <div class="table-container">
         <table id="table">
-          <thead>
+          <tr>
             <th>Book</th>
             <th>Author</th>
             <th>Status</th>
-          </thead>
+          </tr>
           <tbody id="table-body">
             <tr>
               <td>Harry Potter</td>
@@ -41,7 +42,6 @@
           </tbody>
         </table>
       </div>
-      <button onclick="addBookToLibrary()">add</button>
     </div>
   </body>
   <!-- Scripts -->
