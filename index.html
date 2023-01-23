@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Book Tracker</title>
+    <!-- To utilize Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- To utilize Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <!-- Linking CSS -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">My book library</div>
+      <!-- <div class="form"></div> -->
+      <div class="table-container">
+        <table id="table">
+          <thead>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Status</th>
+          </thead>
+          <tbody id="table-body">
+            <tr>
+              <td>Harry Potter</td>
+              <td>JK Rowling</td>
+              <td>Read</td>
+              <td>Delete</td>
+            </tr>
+            <tr>
+              <td>Harry Potter</td>
+              <td>JK Rowling</td>
+              <td>Read</td>
+              <td>Delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button onclick="addBookToLibrary()">add</button>
+    </div>
+  </body>
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,32 @@
+* {
+  font: inherit;
+  color: #353b48;
+}
+
+html {
+  height: 100%;
+  text-align: center;
+  height: 100vh;
+}
+
+body {
+  background-color: #eceff4;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 1000px;
+  background-color: red;
+}
+
+.title {
+  background-color: white;
+  margin: 20px 5px;
+  text-align: left;
+  font-size: 35px;
+  font-weight: 300;
+}
