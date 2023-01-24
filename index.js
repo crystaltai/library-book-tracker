@@ -5,13 +5,15 @@ function Book(title, author, status) {
   this.title = title;
   this.author = author;
   this.status = status;
+  this.order = null;
 
   // Toggle status
   this.toggleStatus = function () {
     if (this.status === 'Read') {
-      this.status === 'Unread';
+      this.status = 'Unread';
+    } else {
+      this.status = 'Read';
     }
-    this.status === 'Read';
   };
 }
 
@@ -28,18 +30,22 @@ function addBookToLibrary() {
     const newBook = new Book(inputTitle, inputAuthor, inputStatus);
     myLibrary.push(newBook);
 
-    // Update table with new row of input book
-    updateTable(inputTitle, inputAuthor, inputStatus);
+    // Clear and Update table with new row of input book
+    clearTable();
+    myLibrary.forEach((element, index) => {
+      element.order = index;
+      updateTable(element.title, element.author, element.status, element.order);
+    });
 
     // Clear form input fields
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
-    document.getElementById('status').value = '';
+    document.getElementById('status').value = 'Read';
   }
 }
 
 // Update table
-function updateTable(title, author, status) {
+function updateTable(title, author, status, order) {
   // Grab the table body element
   let tableBody = document.getElementById('table-body');
 
@@ -57,6 +63,8 @@ function updateTable(title, author, status) {
   statusButton.innerHTML = status;
   statusButton.classList.add('button');
   statusButton.classList.add('status-button');
+  statusButton.setAttribute('id', order);
+  statusButton.addEventListener('click', toggleStatus);
 
   // Create delete button
   let deleteButton = document.createElement('button');
@@ -80,6 +88,29 @@ function updateTable(title, author, status) {
   tableBody.appendChild(row);
 }
 
+// Delete all table rows
+function clearTable() {
+  // Grab the table body element
+  let table = document.getElementById('table');
+  let tableRowCount = table.rows.length;
+  for (let i = tableRowCount - 1; i > 0; i--) {
+    table.deleteRow(i);
+  }
+}
+
+// Toggle status
+function toggleStatus(e) {
+  // Update object
+  let titleOrder = e.target.id;
+  myLibrary[titleOrder].toggleStatus();
+
+  clearTable();
+  myLibrary.forEach((element, index) => {
+    element.order = index;
+    updateTable(element.title, element.author, element.status, element.order);
+  });
+}
+
 // Generate pre-existing Library
 function generateLibrary() {
   const firstBook = new Book('Deep Work', 'Cal Newport', 'Read');
@@ -87,13 +118,9 @@ function generateLibrary() {
   const secondBook = new Book('Harry Potter', 'JK Rowling', 'Read');
   myLibrary.push(secondBook);
 
-  myLibrary.forEach(element => {
-    updateTable(element.title, element.author, element.status);
+  myLibrary.forEach((element, index) => {
+    element.order = index;
+    updateTable(element.title, element.author, element.status, element.order);
   });
 }
 generateLibrary();
-
-// const newBook = new Book('harry potter', 'jk rowling', false);
-// console.log(newBook.status);
-// newBook.toggleStatus();
-// console.log(newBook.status);
