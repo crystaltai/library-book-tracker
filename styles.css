@@ -10,7 +10,6 @@ html {
 }
 
 body {
-  background-color: #eceff4;
   font-family: 'Inter', sans-serif;
 }
 
@@ -22,11 +21,29 @@ body {
   max-width: 1000px;
 }
 
-.title {
-  margin: 20px 0;
+.header {
+  margin-top: 20px;
+  margin-bottom: 35px;
   text-align: left;
   font-size: 35px;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.button {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  filter: brightness(95%);
+}
+
+.button:active {
+  filter: brightness(90%);
 }
 
 .submit-button {
@@ -34,22 +51,9 @@ body {
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 8px 5px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
   background-color: #5e81ac;
+  border: 1px solid #5e81ac;
   color: white;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  filter: brightness(95%);
-}
-
-.submit-button:active {
-  filter: brightness(90%);
 }
 
 #table {
@@ -74,6 +78,7 @@ form {
   display: flex;
   gap: 20px;
   text-align: left;
+  align-items: center;
 }
 
 label {
@@ -100,4 +105,18 @@ select {
   outline: none;
   border: 1px solid #81a1c1;
   border-radius: 5px;
+}
+
+.delete-button {
+  margin: 0;
+  padding: 5px 8px;
+  background-color: #bf616a;
+  color: white;
+}
+
+.status-button {
+  margin: 0;
+  padding: 5px 8px;
+  background-color: #ebcb8b;
+  color: black;
 }
