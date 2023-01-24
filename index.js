@@ -1,3 +1,4 @@
+// Library array holding all books
 const myLibrary = [];
 
 // Book constructor function
@@ -33,6 +34,7 @@ function addBookToLibrary() {
     // Clear and Update table with new row of input book
     clearTable();
     myLibrary.forEach((element, index) => {
+      // Refresh order number of book
       element.order = index;
       updateTable(element.title, element.author, element.status, element.order);
     });
@@ -100,8 +102,9 @@ function clearTable() {
 
 // Toggle status
 function toggleStatus(e) {
-  // Update object
+  // Grab ID of status button that was clicked
   let titleOrder = e.target.id;
+  // Update the Book object based on ID
   myLibrary[titleOrder].toggleStatus();
 
   clearTable();
