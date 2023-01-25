@@ -73,6 +73,8 @@ function updateTable(title, author, status, order) {
   deleteButton.innerText = 'X';
   deleteButton.classList.add('button');
   deleteButton.classList.add('delete-button');
+  deleteButton.setAttribute('id', order);
+  deleteButton.addEventListener('click', deleteRow);
 
   // Insert data into cells
   cellTitle.innerText = title;
@@ -114,9 +116,24 @@ function toggleStatus(e) {
   });
 }
 
+// Delete row
+function deleteRow(e) {
+  // Grab ID of delete button that was clicked
+  let rowToDelete = e.target.id;
+
+  // Delete the Book object based on ID
+  myLibrary.splice(rowToDelete, 1);
+
+  clearTable();
+  myLibrary.forEach((element, index) => {
+    element.order = index;
+    updateTable(element.title, element.author, element.status, element.order);
+  });
+}
+
 // Generate pre-existing Library
 function generateLibrary() {
-  const firstBook = new Book('Deep Work', 'Cal Newport', 'Read');
+  const firstBook = new Book('Deep Work', 'Cal Newport', 'Unread');
   myLibrary.push(firstBook);
   const secondBook = new Book('Harry Potter', 'JK Rowling', 'Read');
   myLibrary.push(secondBook);
