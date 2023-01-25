@@ -2,9 +2,9 @@
 
 Project to a library that tracks a book reading list and their reading status using only HTML, CSS and Vanilla JS (frontend only)
 
-**🔗 Live preview:**
+**🔗 Live preview:** https://crystaltai.github.io/library-book-tracker/
 
-![]()
+![](https://github.com/crystaltai/library-book-tracker/blob/main/library-demo.gif?raw=true)
 
 ## Built with
 
